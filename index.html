@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Template</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>Aslan Codes</h1>
+            </div>
+            <nav>
+                <a class="btn" href="#">Home</a>
+                <a class="btn" href="#">Header</a>
+                <a class="btn" href="#">Nav-Bars</a>
+                <a class="btn" href="#">Galleries</a>
+                <a class="btn" href="#">Articles/blog posts</a>
+                <a class="btn" href="#">Cards</a>
+                <a class="btn" href="#">Side-Menus</a>
+                <a class="btn" href="#">Footers</a>
+                <a class="btn" href="#">Page-Layouts</a>
+            </nav>
+        </header>
+        <section class="showcase">
+        </section>
+    </div>
+    <footer>
+        <p>Designed by <a href="#">Aslan</a> x <a href="#">Tami</a></p>
+    </footer>
+    <script>
+        const nav = document.querySelectorAll(".btn")
+        const currentPath = window.location.pathname.split("/").pop()
+
+        nav.forEach((link) => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault()
+            nav.forEach((nav) => nav.classList.remove("active"))
+            link.classList.toggle("active")
+        });
+        if (link.getAttribute("href") === currentPath) {
+            link.classList.add("active")
+        }
+        });
+    </script>
+</body>
+</html>
